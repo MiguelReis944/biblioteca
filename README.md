@@ -1,28 +1,30 @@
 # biblioteca
 sistema de biblioteca 
 
-estrutura do back-end:
+## Estrutura do back-end
 
+```text
 src/
- ├── books/
- │    ├── book.controller == recebe os pedidos e retorna a resposta (ex: pedidos para listar livros)
- │    ├── book.service == define o que pode e nao pode ser feito com o livro
- │    ├── book.repository == são as ações relacionadas ao livro no bd (ex:criar,buscar,listar)
- │    └── book.model == define o modelo do livro e suas caracteristicas
- │
- ├── users/
- │    ├── user.controller == recebe os pedidos e retorna a resposta (ex: pedidos para listar usuarios)
- │    ├── user.service == define o que o usuario pode e nao pode fazer
- │    ├── user.repository == são as ações relacionadas ao usuario no bd (ex:criar,buscar,listar)
- │    └── user.model == define o modelo do usuario e suas caracteristicas
- │
- ├── loans/
- │    ├── loan.controller == recebe os pedidos e retorna a resposta (ex: pedidos para listar emprestimos)
- │    ├── loan.service == define o que pode e nao pode ser feito em um emprestimo
- │    ├── loan.repository == são as ações relacionadas ao emprestimo no bd (ex:criar,buscar,listar)
- │    └── loan.model == define o modelo do emprestimo e suas caracteristicas
- │
- ├── routes/ == é onde estao as rotas que serao consumidas pelo front, e ele redireciona para um dos .controller
- ├── middlewares/ == verifica e autentica as coisas antes do .controller (ex: verifica login,valida dados e etc)
- ├── config/ == onde fica as configurações do sistema (ex: configuração do banco, variaveis de ambiente, porta do servidor e etc)
- └── utils/ == guarda funções uteis para as funções do sistema e autenticação de dados(ex: validar email, criptografar senhas, gerar codigos de emprestimo, conversão de data e etc)
+├── books/
+│   ├── book.controller   → recebe os pedidos e retorna a resposta
+│   ├── book.service      → define o que pode e não pode ser feito com o livro
+│   ├── book.repository   → ações relacionadas ao livro no banco de dados
+│   └── book.model        → modelo do livro e suas características
+│
+├── users/
+│   ├── user.controller   → recebe os pedidos e retorna a resposta
+│   ├── user.service      → define o que o usuário pode e não pode fazer
+│   ├── user.repository   → ações relacionadas ao usuário no banco de dados
+│   └── user.model        → modelo do usuário e suas características
+│
+├── loans/
+│   ├── loan.controller   → recebe os pedidos e retorna a resposta
+│   ├── loan.service      → regras de negócio do empréstimo
+│   ├── loan.repository   → ações relacionadas ao empréstimo no banco
+│   └── loan.model        → modelo do empréstimo e suas características
+│
+├── routes/               → define as rotas da API
+├── middlewares/          → validações antes dos controllers
+├── config/               → configurações do sistema
+└── utils/                → funções utilitárias do sistema
+```
