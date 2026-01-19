@@ -1,4 +1,4 @@
--- Active: 1763762549926@@127.0.0.1@3306@biblioteca
+
 create database biblioteca;
 use biblioteca;
 
