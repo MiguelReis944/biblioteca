@@ -28,3 +28,8 @@ src/
 ├── config/               → configurações do sistema
 └── utils/                → funções utilitárias do sistema
 ```
+
+
+Sistema de criptografia de senha via bcrypt
+Banco de dados MySQL
+Criptografia de id_publico com UUID()
