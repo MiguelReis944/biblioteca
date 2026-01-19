@@ -31,6 +31,7 @@ create table emprestimo(
     data_prevista DATE,
     data_entrega DATE,
     ativo TINYINT(1) NOT NULL DEFAULT 1,
+    multa DECIMAL(10,2) DEFAULT 0
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (id_livro) REFERENCES livros(id)
 );
