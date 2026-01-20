@@ -31,5 +31,9 @@ src/
 
 
 Sistema de criptografia de senha via bcrypt
+
+
 Banco de dados MySQL
+
+
 Criptografia de id_publico com UUID()
