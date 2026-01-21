@@ -25,6 +25,7 @@ create table clientes(
 
 create table emprestimo(
     id int AUTO_INCREMENT PRIMARY KEY,
+    id_publico char(36) NOT NULL UNIQUE,
     id_cliente int not null,
     id_livro int not null,
     data_retirada DATE not null,
@@ -35,3 +36,4 @@ create table emprestimo(
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (id_livro) REFERENCES livros(id)
 );
+

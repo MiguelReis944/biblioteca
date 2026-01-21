@@ -9,6 +9,14 @@ export class Livros_repository{
     buscarLivroPorTitulo(pesquisa){
         return db.query(`select public_id, titulo, autor from livros where titulo like ?;`, [`%${pesquisa}%`])
     }
+
+    buscarLivroPorGenero(pesquisa){
+        return db.query(`select public_id, titulo, autor from livros where genero like ?;`, [`%${pesquisa}%`])
+    }
+
+    buscarLivroPorAutor(pesquisa){
+        return db.query(`select public_id, titulo, autor from livros where autor like ?;`, [`%${pesquisa}%`])
+    }
     
     livroDisponivel(public_id){
         return db.query(`select exists(select 1 from livros where public_id = ? and quantidade_disponivel>0) as disponivel;`, [public_id])
@@ -42,7 +50,7 @@ export class Livros_repository{
         return db.query(`delete from livros where public_id = ?;`, [public_id])
     }
     
-    adicinarLivro(public_id,titulo,autor,genero,descricao,ano,quantidade_total,quantidade_disponivel){
+    adicinarLivro(titulo,autor,genero,descricao,ano,quantidade_total,quantidade_disponivel){
         return db.query(`INSERT INTO livros (public_id, titulo, autor, genero, descricao, ano, quantidade_total, quantidade_disponivel) VALUES (UUID(), ?, ?, ?, ?, ?, ?, ?);`,[titulo, autor, genero, descricao, ano, quantidade_total, quantidade_disponivel])
     }
     
